@@ -1,0 +1,15 @@
+{
+    "background_color": "purple",
+    "description": "Parolele",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "icon/favicon-256x256.png",
+        "sizes": "256x256",
+        "type": "image/png"
+      }
+    ],
+    "name": "Parolele",
+    "short_name": "Parolele"
+  }
+  

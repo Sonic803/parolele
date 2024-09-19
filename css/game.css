@@ -1,0 +1,340 @@
+@import url("statistiche.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif');
+
+.light-mode {
+    --color-neutral: #f3fff9;
+    --color-absent: #c3ccc0;
+    --color-present: #f7fb8c;
+    --color-correct: #74ff84;
+    --cellaFont: #142c01;
+    --cellaBorder: #142c01;
+}
+
+.dark-mode {
+    --color-neutral: rgb(22, 59, 37);
+    --color-absent: #e5e8d7;
+    --color-present: #faff75;
+    --color-correct: #8af175;
+    --cellaFont: #3f7a00;
+    --cellaBorder: rgb(171, 187, 127);
+    --cellaFont: #668f3e;
+
+}
+
+.error {
+    font-style: italic;
+    font-weight: bold;
+    color: var(--errorColor);
+    font-size: 16pt;
+    text-align: center;
+}
+
+main {
+    align-items: stretch;
+}
+
+#tabella {
+    width: 95%;
+    max-width: 600px;
+    max-height: 720px;
+    margin: auto;
+    margin-top: 10px;
+    font-size: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    padding-bottom: 10px;
+}
+
+#keyboard {
+    width: 95%;
+    max-width: 600px;
+    max-height: 300px;
+    margin: auto;
+    font-size: 30px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-bottom: 10px;
+}
+
+.riga {
+    height: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+}
+
+.cella {
+    border: 2px solid var(--cellaBorder);
+    flex: 1;
+    display: flex;
+    font-family: monospace;
+    font-weight: bold;
+    color: var(--cellaFont);
+    text-transform: uppercase;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-neutral);
+    filter: brightness(100%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+.started .cella {
+    transition: filter 0.2s, background-color var(--transitionModeTime);
+}
+
+#keyboard .cella {
+    border-radius: 4px 4px 6px 6px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+#tabella .cella {
+    margin: 2px;
+    border-radius: 3px;
+}
+
+/*Don't do it on mobile*/
+@media (pointer: fine) {
+    #keyboard .cella:hover {
+        filter: brightness(90%);
+    }
+
+    #tabella .cella:hover {
+        filter: brightness(90%);
+    }
+}
+
+#keyboard .cella:active {
+    filter: brightness(80%);
+}
+
+.backspace {
+    flex: 1.5;
+    font-size: 18px;
+}
+
+.enter {
+    flex: 1.5;
+    font-size: 18px;
+}
+
+#tabella .cella.scritto {
+    animation: shake 0.1s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+#tabella .cella.cancellato {
+    animation: shake1 0.1s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+#tabella .cella.cancellatoVeloce {
+    animation: shake2 0.2s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+#tabella .cella.nonesiste {
+    animation: noAnimation 0.5s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+#tabella .cella.esiste {
+    animation: yesAnimation 0.5s;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    z-index: 1;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@keyframes shake1 {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@keyframes shake2 {
+    0% {
+        transform: translate(3px, 3px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-3px, -6px) rotate(-3deg);
+    }
+
+    20% {
+        transform: translate(-9px, 0px) rotate(3deg);
+    }
+
+    30% {
+        transform: translate(9px, 6px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(3px, -3px) rotate(3deg);
+    }
+
+    50% {
+        transform: translate(-3px, 6px) rotate(-3deg);
+    }
+
+    60% {
+        transform: translate(-9px, 3px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(9px, 3px) rotate(-3deg);
+    }
+
+    80% {
+        transform: translate(-3px, -3px) rotate(3deg);
+    }
+
+    90% {
+        transform: translate(3px, 6px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(3px, -6px) rotate(-3deg);
+    }
+}
+
+@keyframes noAnimation {
+    20% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(-5px, 0px) rotate(-5deg);
+    }
+
+    40% {
+        transform: translate(5px, 0px) rotate(5deg);
+    }
+
+    60% {
+        transform: translate(-5px, 0px) rotate(-5deg);
+    }
+
+    80% {
+        transform: translate(5px, 0px) rotate(5deg);
+    }
+
+    20% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+}
+
+@keyframes yesAnimation {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

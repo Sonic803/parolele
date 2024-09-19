@@ -1,0 +1,42 @@
+.light-mode {
+    --background-body: rgb(247, 255, 247);
+    --defaultTextColor: rgb(0, 0, 0);
+    --errorColor: rgb(221, 77, 0);
+}
+
+.dark-mode {
+    --background-body: rgb(19, 30, 24);
+    --defaultTextColor: rgb(255, 255, 255);
+    --errorColor: rgb(238, 104, 32);
+}
+
+body {
+    margin: 0px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+
+    background-color: var(--background-body);
+    color: var(--defaultTextColor);
+}
+
+body.started {
+    transition: background-color var(--transitionModeTime);
+    --transitionModeTime: 0.5s;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.unselectable {
+    user-select: none;
+}
+
+.hidden {
+    display: none !important;
+}

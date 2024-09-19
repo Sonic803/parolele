@@ -1,0 +1,108 @@
+.light-mode {
+    --borderFieldColor: rgb(20, 20, 20);
+    --inputBorder: rgb(20, 20, 20);
+    --inputBackground: rgb(247, 255, 247);
+    --inputBackgroundAutofill: #e0f9c2;
+    --buttonBackground: rgb(109, 158, 69);
+    --buttonText: white;
+}
+
+.dark-mode {
+    --borderFieldColor: rgb(191, 218, 117);
+    --inputBorder: rgb(29, 78, 49);
+    --inputBackground: rgb(247, 255, 247);
+    --inputBackgroundAutofill: #e0f9c2;
+    --buttonBackground: rgb(102, 138, 0);
+    --buttonText: white;
+}
+
+main {
+    align-items: center;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    font-size: 13pt;
+}
+
+form {
+    width: 100%;
+    max-width: 700px;
+    max-height: 700px;
+}
+
+fieldset {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 20px;
+    border: 3px solid var(--borderFieldColor);
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.6em;
+    font-style: oblique;
+}
+
+label {
+    font-weight: bold;
+    font-family: sans-serif;
+    white-space: nowrap;
+}
+
+form p {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 1em;
+}
+
+form input {
+    font-size: 1em;
+    text-align: center;
+    width: 40%;
+    border: 2px solid var(--inputBorder);
+    border-radius: 5px;
+    background-color: var(--inputBackground);
+}
+
+input:autofill {
+    background: var(--inputBackgroundAutofill) !important;
+}
+
+p.submit {
+    justify-content: center;
+    margin-top: 30px;
+}
+
+input[type="submit"] {
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: var(--buttonBackground);
+    color: var(--buttonText);
+    cursor: pointer;
+    border: none;
+}
+
+/*Don't do it on mobile*/
+@media (pointer: fine) {
+    input[type="submit"]:hover {
+        filter: brightness(90%);
+    }
+}
+
+input[type="submit"]:active {
+    filter: brightness(80%);
+}
+
+input:not([type="submit"]):focus {
+    outline: none;
+    box-shadow: 0 0 5px 1px var(--inputBorder);
+}
+
+.error {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--errorColor);
+}

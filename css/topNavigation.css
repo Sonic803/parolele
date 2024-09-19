@@ -1,0 +1,93 @@
+@import url("switch.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.light-mode {
+    --background: rgb(193, 228, 193);
+    --barText: rgb(64, 87, 0);
+    --barHover: rgb(112, 152, 0);
+}
+
+.dark-mode {
+    --background: rgb(22, 59, 37);
+    --barText: rgb(191, 218, 117);
+    --barHover: rgb(184, 255, 62);
+}
+
+.topNavigation {
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*TODO */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    box-shadow: 0 0 10px var(--background);
+}
+
+.started .topNavigation {
+    transition: background-color var(--transitionModeTime),
+        box-shadow var(--transitionModeTime);
+}
+
+.topNavigation ul.left {
+    list-style: none;
+    padding-left: 0px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: center;
+}
+
+.topNavigation ul.right {
+    list-style: none;
+    padding-left: 0px;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    align-items: center;
+}
+
+.topNavigation a,
+.topNavigation a:visited {
+    text-decoration: none;
+    color: var(--barText);
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--background);
+    font-size: 20px;
+    display: inline-block;
+    line-height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+}
+
+.started .topNavigation a {
+    transition: filter 0.2s, background-color var(--transitionModeTime);
+}
+
+.topNavigation a {
+    filter: brightness(100%);
+}
+
+/*Don't do it on mobile*/
+@media (pointer: fine) {
+    .topNavigation a:hover {
+        filter: brightness(90%);
+        color: var(--barHover);
+    }
+}
+
+.topNavigation a:active {
+    filter: brightness(80%);
+    color: var(--barHover);
+}

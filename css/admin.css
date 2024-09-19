@@ -1,0 +1,64 @@
+.light-mode {
+    --resetButton: rgb(193, 228, 193);
+    --spoilerColor: rgb(226, 100, 32);
+}
+
+.dark-mode {
+    --resetButton: rgb(22, 59, 37);
+    --spoilerColor: rgb(255, 124, 54);
+}
+
+button {
+    background-color: var(--resetButton);
+    border: none;
+    color: var(--defaultColor);
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 13pt;
+    margin: 10px;
+    cursor: pointer;
+    filter: brightness(100%);
+    border-radius: 20px;
+}
+
+.started button {
+    transition: background-color var(--transitionModeTime);
+}
+
+/*Don't do it on mobile*/
+@media (pointer: fine) {
+    button:hover {
+        filter: brightness(90%);
+    }
+
+}
+
+button:active {
+    filter: brightness(80%);
+}
+
+
+.wordOfTheDay {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 13pt;
+}
+
+summary {
+    cursor: pointer;
+}
+
+/*Don't do it on mobile*/
+@media (pointer: fine) {
+    summary:hover {
+        text-shadow: 1px 1px 3px var(--spoilerColor);
+    }
+
+}
+
+summary:active {
+    text-shadow: 1px 1px 3px var(--spoilerColor);
+}

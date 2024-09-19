@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif');
+
+.light-mode {
+    --aColor: rgb(7, 127, 113);
+    --color-absent: #94a18f;
+    --color-present: #f7fb8c;
+    --color-correct: #24ba36;
+    --shadow: #808080;
+}
+
+.dark-mode {
+    --aColor: rgb(191, 218, 117);
+    --color-absent: #b2c9a9;
+    --color-present: #faff75;
+    --color-correct: #4bf65f;
+    --shadow: #808080;
+}
+
+h1,
+h2 {
+    font-family: 'Noto Serif', serif;
+}
+
+main {
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+}
+
+main p {
+    text-align: justify;
+    font-family: sans-serif;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: var(--aColor);
+}
+
+#verde {
+    color: var(--color-correct);
+}
+
+#giallo {
+    color: var(--color-present);
+}
+
+#grigio {
+    color: var(--color-absent);
+}
+
+#verde,
+#giallo,
+#grigio {
+    text-shadow: 1px 1px 1.5px var(--shadow);
+}
